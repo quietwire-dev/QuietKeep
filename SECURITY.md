@@ -13,6 +13,6 @@ QuietKeep is regularly scanned using three independent tools to check for securi
 | Tool | Target | Result | Date |
 |------|--------|--------|------|
 | MDN HTTP Observatory | quietwire.dev | A+ (115/100), 10/10 tests passed | 2026-04-11 |
-| Trivy | backend/requirements.txt (pip) | 0 vulnerabilities | 2026-04-11 |
-| Trivy | frontend/package-lock.json (npm) | 0 vulnerabilities | 2026-04-11 |
-| Semgrep | Codebase | Passed, no findings | 2026-04-11 |
+| Trivy | backend/requirements.txt (pip) | 0 vulnerabilities | 2026-04-12 |
+| Trivy | frontend/package-lock.json (npm) | 0 vulnerabilities | 2026-04-12 |
+| Semgrep | Codebase | Passed, no findings | 2026-04-12 |

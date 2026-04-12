@@ -68,7 +68,7 @@ QuietKeep connects to your hosts over SSH using key-based authentication. It run
 | Frontend | React 18, TypeScript, Tailwind CSS, Lucide icons |
 | Database | SQLite (zero config) |
 | Transport | SSH (key-based, no agents) |
-| Deployment | systemd + Nginx (Docker Compose coming soon) |
+| Deployment | Docker Compose (single container, builds from source) |
 
 ---
 
@@ -85,16 +85,16 @@ QuietKeep is in **active development**. Core features are functional and being t
 - ✅ First-run wizard with pre-flight system checks
 - ✅ Help page with searchable FAQ and bug reporting
 - ✅ Threat Intel dashboard with CISA KEV catalog and ransomware tracking
+- ✅ Docker Compose deployment with auto-detected IP and SSH key management via web UI
 
 ### In Progress
-- 🔧 Dockerfile and Docker Compose for easy deployment
-- 🔧 Test deployment on a clean server
+- 🔧 Authentication (single-user login)
 
 ### Planned
 - 📋 Email/webhook notifications for available updates
 - 📋 Selective patching (choose which packages to update)
 - 📋 Host groups and bulk operations
-- 📋 Authentication and multi-user support
+- 📋 Multi-user support with roles
 
 ---
 
