@@ -1,6 +1,6 @@
 # Security
 
-QuietKeep is regularly scanned using four independent tools to check for security issues in the website, dependencies, source code, and license compliance.
+QuietKeep is regularly scanned using five independent tools to check for security issues in the website, dependencies, source code, and license compliance.
 
 ## Security Scans
 
@@ -12,6 +12,8 @@ QuietKeep is regularly scanned using four independent tools to check for securit
 
 **[ScanCode Toolkit](https://github.com/aboutcode-org/scancode-toolkit)** scans every file in the project for license declarations, copyright notices, and embedded package metadata. This ensures all code is properly licensed and no unexpected third-party copyrights are present.
 
+**[ScanOSS](https://www.scanoss.com/)** checks source code fingerprints against a database of known open source projects to verify code originality and detect any unattributed third-party code.
+
 | Tool | Target | Result | Date |
 |------|--------|--------|------|
 | MDN HTTP Observatory | quietwire.dev | A+ (115/100), 10/10 tests passed | 2026-04-11 |
@@ -20,3 +22,4 @@ QuietKeep is regularly scanned using four independent tools to check for securit
 | Semgrep | Codebase | Passed, no findings | 2026-04-12 |
 | ScanCode | 76 project files | AGPL-3.0 consistent, no conflicts | 2026-04-15 |
 | ScanCode | 225 frontend dependencies | All AGPL-compatible (MIT, Apache-2.0, ISC, BSD, MPL-2.0) | 2026-04-15 |
+| ScanOSS | 41 source files | 36 original, 5 boilerplate/scaffold matches (no concerns) | 2026-04-15 |
