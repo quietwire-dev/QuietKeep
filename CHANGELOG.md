@@ -7,6 +7,12 @@ All notable changes to QuietKeep will be documented in this file.
 ## [Unreleased] - In Development
 
 ### Added
+- **Automated sudoers probing**. Every host scan now checks whether the `/etc/sudoers.d/quietkeep-<user>` NOPASSWD rule is present. Status is surfaced as an OK / Needs Fix / Unknown / Root badge in both Host Detail and Host Management
+- **One-click Fix Sudoers**. New modal installs the sudoers rule on a host using a one-time password, eliminating the need to SSH into each host by hand
+- **GPG key-rotation detection**. The patcher recognizes NO_PUBKEY / EXPKEYSIG / expired-key failures on apt and Kali hosts and tags the patch log so the UI can respond
+- **Keyring recovery modal**. When a key rotation is detected, the Host Detail view shows a persistent banner and an in-app popup with OS-specific secure recovery commands (HTTPS-fetched archive keyring, sha256 verification, dpkg install). No auto-trust of new signing keys by design
+- **`apt-get --fix-broken install` step**. The patcher now completes half-finished dpkg transactions before running the upgrade, fixing a common source of silent patch stalls on Kali rolling releases
+- **Shared ConfirmDialog component**. Centered, accessible confirmation modal with danger/warning/primary variants. Replaces native `window.confirm()` dialogs across Patch, Reboot, Docker Update, and Delete All Hosts
 - **Home overview page**. Default landing page with at-a-glance host and Docker status
 - **Docker stack management**. Discover, scan, and update Docker Compose stacks across hosts
 - **One-click Docker updates**. Pull latest images and recreate containers with full log capture
@@ -29,6 +35,11 @@ All notable changes to QuietKeep will be documented in this file.
 - **30-day auto-cleanup**. Patch history older than 30 days is automatically removed
 
 ### Fixed
+- Reboot action now reports honest success/failure based on SSH session behavior and sudo exit codes instead of always returning success
+- Patch runs that fail because the host is missing a NOPASSWD sudoers rule no longer misreport as success with 0 packages; they now fail loudly and the UI surfaces the sudoers badge
+- `setup-host.sh` sudoers rule widened to cover `apt-get` and `pacman` commands (previously only `apt`), fixing silent patch failures on hosts that were set up with the earlier, narrower rule
+- Confirmation dialogs for Patch, Reboot, Docker Update, and Delete All Hosts now render in the center of the viewport instead of at the top where they were easy to miss (BUG-003)
+- SSH Test indicator in Host Management now reflects the persisted online state after the test completes instead of showing stale data
 - Docker scanner now preserves stack IDs across scans (upsert instead of delete/recreate)
 - Docker update history persists correctly after re-scans
 - Release notes links resolve correctly for monorepo images (Immich, Home Assistant, etc.)

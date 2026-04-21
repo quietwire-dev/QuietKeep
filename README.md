@@ -86,6 +86,8 @@ QuietKeep is in **active development**. Core features are functional and being t
 - ✅ Help page with searchable FAQ and bug reporting
 - ✅ Threat Intel dashboard with CISA KEV catalog and ransomware tracking
 - ✅ Docker Compose deployment with auto-detected IP and SSH key management via web UI
+- ✅ Automated sudoers probing with one-click Fix Sudoers
+- ✅ GPG key rotation detection with in-app secure recovery guidance (Kali/apt)
 
 ### In Progress
 - 🔧 Authentication (single-user login)
