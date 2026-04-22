@@ -7,6 +7,7 @@ All notable changes to QuietKeep will be documented in this file.
 ## [Unreleased] - In Development
 
 ### Added
+- **Faster Docker stack scans**. Docker discovery and update checks across multiple hosts now run in parallel instead of sequentially
 - **Automated sudoers probing**. Every host scan now checks whether the `/etc/sudoers.d/quietkeep-<user>` NOPASSWD rule is present. Status is surfaced as an OK / Needs Fix / Unknown / Root badge in both Host Detail and Host Management
 - **One-click Fix Sudoers**. New modal installs the sudoers rule on a host using a one-time password, eliminating the need to SSH into each host by hand
 - **GPG key-rotation detection**. The patcher recognizes NO_PUBKEY / EXPKEYSIG / expired-key failures on apt and Kali hosts and tags the patch log so the UI can respond

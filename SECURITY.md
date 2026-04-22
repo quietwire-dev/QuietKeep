@@ -17,9 +17,11 @@ QuietKeep is regularly scanned using five independent tools to check for securit
 | Tool | Target | Result | Date |
 |------|--------|--------|------|
 | MDN HTTP Observatory | quietwire.dev | A+ (115/100), 10/10 tests passed | 2026-04-11 |
-| Trivy | backend/requirements.txt (pip) | 0 vulnerabilities | 2026-04-21 |
-| Trivy | frontend/package-lock.json (npm) | 0 vulnerabilities | 2026-04-21 |
-| Semgrep | Codebase | 0 findings (1,059 rules, 80 files) | 2026-04-21 |
-| ScanCode | 81 project files | AGPL-3.0 consistent, no conflicts | 2026-04-21 |
+| Trivy | backend/requirements.txt (pip) | 0 vulnerabilities | 2026-04-22 |
+| Trivy | frontend/package-lock.json (npm) | 0 vulnerabilities | 2026-04-22 |
+| Semgrep | Codebase | 0 findings (518 rules, 82 files) | 2026-04-22 |
+| ScanCode | 81 project files | AGPL-3.0 consistent, no conflicts | 2026-04-22 |
 | ScanCode | 225 frontend dependencies | All AGPL-compatible (MIT, Apache-2.0, ISC, BSD, MPL-2.0) | 2026-04-15 |
-| ScanOSS | 47 source files | 42 original, 5 boilerplate/scaffold matches (no concerns) | 2026-04-21 |
+| ScanOSS | 45 source files | 41 original, 4 boilerplate/scaffold matches (no concerns) | 2026-04-22 |
+
+*Dates reflect the server-side scan run date in UTC.*
