@@ -88,6 +88,7 @@ QuietKeep is in **active development**. Core features are functional and being t
 - ✅ Docker Compose deployment with auto-detected IP and SSH key management via web UI
 - ✅ Automated sudoers probing with one-click Fix Sudoers
 - ✅ GPG key rotation detection with in-app secure recovery guidance (Kali/apt)
+- ✅ Held-back package detection with opt-in kernel upgrade flow
 
 ### In Progress
 - 🔧 Authentication (single-user login)

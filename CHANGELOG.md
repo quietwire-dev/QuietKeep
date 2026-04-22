@@ -7,6 +7,7 @@ All notable changes to QuietKeep will be documented in this file.
 ## [Unreleased] - In Development
 
 ### Added
+- **Held-back updates surfacing**. When `apt-get upgrade` defers packages that would require installing new dependencies (typically kernel metapackages on Ubuntu/Debian), the Host Detail page now shows a dedicated card listing what was held back, with an explicit Install Held-Back Updates button that runs `apt-get upgrade --with-new-pkgs`. A Held Back column on the Host Management table shows the count per host so you can spot deferred updates at a glance
 - **Faster Docker stack scans**. Docker discovery and update checks across multiple hosts now run in parallel instead of sequentially
 - **Automated sudoers probing**. Every host scan now checks whether the `/etc/sudoers.d/quietkeep-<user>` NOPASSWD rule is present. Status is surfaced as an OK / Needs Fix / Unknown / Root badge in both Host Detail and Host Management
 - **One-click Fix Sudoers**. New modal installs the sudoers rule on a host using a one-time password, eliminating the need to SSH into each host by hand
