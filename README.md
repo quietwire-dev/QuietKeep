@@ -89,6 +89,7 @@ QuietKeep is in **active development**. Core features are functional and being t
 - ✅ Automated sudoers probing with one-click Fix Sudoers
 - ✅ GPG key rotation detection with in-app secure recovery guidance (Kali/apt)
 - ✅ Held-back package detection with opt-in kernel upgrade flow
+- ✅ Host uptime visibility on Home and Host Detail
 
 ### In Progress
 - 🔧 Authentication (single-user login)

@@ -7,6 +7,7 @@ All notable changes to QuietKeep will be documented in this file.
 ## [Unreleased] - In Development
 
 ### Added
+- **Host uptime display**. Every host row on Home shows how long it has been online (e.g. `up 3d 4h`), and the Host Detail page shows the same alongside the last-scan timestamp. Useful for spotting hosts that have gone too long between reboots or been stuck pending for a while
 - **Held-back updates surfacing**. When `apt-get upgrade` defers packages that would require installing new dependencies (typically kernel metapackages on Ubuntu/Debian), the Host Detail page now shows a dedicated card listing what was held back, with an explicit Install Held-Back Updates button that runs `apt-get upgrade --with-new-pkgs`. A Held Back column on the Host Management table shows the count per host so you can spot deferred updates at a glance
 - **Faster Docker stack scans**. Docker discovery and update checks across multiple hosts now run in parallel instead of sequentially
 - **Automated sudoers probing**. Every host scan now checks whether the `/etc/sudoers.d/quietkeep-<user>` NOPASSWD rule is present. Status is surfaced as an OK / Needs Fix / Unknown / Root badge in both Host Detail and Host Management
