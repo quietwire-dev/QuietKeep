@@ -90,6 +90,9 @@ QuietKeep is in **active development**. Core features are functional and being t
 - ✅ GPG key rotation detection with in-app secure recovery guidance (Kali/apt)
 - ✅ Held-back package detection with opt-in kernel upgrade flow
 - ✅ Host uptime visibility on Home and Host Detail
+- ✅ Fleet-wide Diagnostics tab with sortable OS, kernel, uptime, reboot, and sudoers columns
+- ✅ Per-host Diagnostics card consolidating system health in one view
+- ✅ Real OS name detection from `/etc/os-release` and kernel version probing via `uname -r`
 
 ### In Progress
 - 🔧 Authentication (single-user login)
@@ -127,6 +130,9 @@ QuietKeep is in **active development**. Core features are functional and being t
 
 ### Docker Stacks
 ![Docker Stacks](screenshots/QuietWire-QuietKeep-Docker-Stacks.png)
+
+### Diagnostics
+![Diagnostics](screenshots/QuietWire-QuietKeep-Diagnostics.png)
 
 ### Threat Intel
 ![Threat Intel](screenshots/QuietWire-QuietKeep-Threat-Intel.png)

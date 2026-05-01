@@ -7,6 +7,10 @@ All notable changes to QuietKeep will be documented in this file.
 ## [Unreleased] - In Development
 
 ### Added
+- **Diagnostics tab**. New fleet-wide Diagnostics page showing all hosts in a sortable table with OS, kernel version, uptime, reboot status, sudoers status, and last scan time. Columns are sortable by clicking headers. Includes a Scan All button for quick fleet-wide refresh
+- **Per-host Diagnostics card**. The Host Detail page now includes a Diagnostics section consolidating OS name, kernel version, uptime, reboot status, sudoers status, and last scan in a compact grid
+- **Real OS name detection**. Each scan now reads `PRETTY_NAME` from `/etc/os-release` via SSH, showing the actual distribution name and version (e.g. "Ubuntu 24.04.1 LTS", "Debian GNU/Linux 13 (trixie)", "CachyOS") instead of the generic package manager label
+- **Kernel version probing**. Each scan now runs `uname -r` via SSH and displays the running kernel version per host (e.g. "6.8.0-111-generic", "6.17.13-2-pve"). Useful for tracking kernel-specific CVEs across the fleet
 - **Host uptime display**. Every host row on Home shows how long it has been online (e.g. `up 3d 4h`), and the Host Detail page shows the same alongside the last-scan timestamp. Useful for spotting hosts that have gone too long between reboots or been stuck pending for a while
 - **Held-back updates surfacing**. When `apt-get upgrade` defers packages that would require installing new dependencies (typically kernel metapackages on Ubuntu/Debian), the Host Detail page now shows a dedicated card listing what was held back, with an explicit Install Held-Back Updates button that runs `apt-get upgrade --with-new-pkgs`. A Held Back column on the Host Management table shows the count per host so you can spot deferred updates at a glance
 - **Faster Docker stack scans**. Docker discovery and update checks across multiple hosts now run in parallel instead of sequentially
@@ -50,3 +54,7 @@ All notable changes to QuietKeep will be documented in this file.
 - Light mode badge contrast improved for update indicators
 - SSH key path mismatch between Dockerfile ENV and upload destination
 - HomePage not refreshing host data after Scan All completes
+
+### Security
+- Bumped `python-multipart` from 0.0.24 to 0.0.26 (CVE-2026-40347, MEDIUM)
+- Bumped `postcss` from 8.5.9 to 8.5.10 (CVE-2026-41305, MEDIUM)
